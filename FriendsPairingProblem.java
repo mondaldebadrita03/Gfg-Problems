@@ -1,3 +1,16 @@
+//Basic Approach : O(2^n)
+class Solution {
+    public int countFriendsPairings(int n) {
+        if (n <= 2) {
+            return n;
+        }
+        int singleOption = countFriendsPairings(n - 1);
+        int pairOption = (n - 1) * countFriendsPairings(n - 2);
+        return singleOption + pairOption;
+    }
+}
+
+//Optimal Approach : O(n)
 class Solution {
     public int countFriendsPairings(int n) {
         if (n <= 2) {
